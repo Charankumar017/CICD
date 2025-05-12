@@ -63,25 +63,25 @@ jobs:
             exit 1
           fi
 
-      - uses: actions/upload-artifact@v3
-        with:
-          name: Build
-          path: android/app/build/outputs/apk/release/app-release.apk
+      # - uses: actions/upload-artifact@v3
+      #   with:
+      #     name: Build
+      #     path: android/app/build/outputs/apk/release/app-release.apk
 
-      - name: Upload artifact to Firebase App Distribution
-        id: testing_outputs
-        uses: wzieba/Firebase-Distribution-Github-Action@v1
-        with:
-          appId: ${{secrets.FIREBASE_APP_ID}}
-          serviceCredentialsFileContent: ${{secrets.CREDENTIAL_FILE_CONTENT}}
-          groups: testers
-          file: android/app/build/outputs/apk/release/app-release.apk
+      # - name: Upload artifact to Firebase App Distribution
+      #   id: testing_outputs
+      #   uses: wzieba/Firebase-Distribution-Github-Action@v1
+      #   with:
+      #     appId: ${{secrets.FIREBASE_APP_ID}}
+      #     serviceCredentialsFileContent: ${{secrets.CREDENTIAL_FILE_CONTENT}}
+      #     groups: testers
+      #     file: android/app/build/outputs/apk/release/app-release.apk
 
-      - name: Print Firebase Distribution Links
-        run: |
-          echo "Firebase Console URI: ${{steps.testing_outputs.outputs.FIREBASE_CONSOLE_URI}}"
-          echo "Testing URI: ${{steps.testing_outputs.outputs.TESTING_URI}}"
-          echo "Binary Download URI: ${{steps.testing_outputs.outputs.BINARY_DOWNLOAD_URI}}"
+      # - name: Print Firebase Distribution Links
+      #   run: |
+      #     echo "Firebase Console URI: ${{steps.testing_outputs.outputs.FIREBASE_CONSOLE_URI}}"
+      #     echo "Testing URI: ${{steps.testing_outputs.outputs.TESTING_URI}}"
+      #     echo "Binary Download URI: ${{steps.testing_outputs.outputs.BINARY_DOWNLOAD_URI}}"
 
       # Optional: Enable this only if you have working SMTP setup
       # - name: Send Email Notification
