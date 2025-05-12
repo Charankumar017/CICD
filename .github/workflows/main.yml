@@ -49,28 +49,28 @@ jobs:
         run: |
           cd android && ./gradlew bundleRelease --no-daemon
 
-      # - name: Sign App Bundle
-      #   id: sign_app
-      #   uses: r0adkll/sign-android-release@v1
-      #   with:
-      #     releaseDirectory: android/app/build/outputs/bundle/release
-      #     signingKeyBase64: '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'
-      #     alias: "key0"
-      #     keyStorePassword: "12qwaszx"
-      #     keyPassword: "12qwaszx"
+      - name: Sign App Bundle
+        id: sign_app
+        uses: r0adkll/sign-android-release@v1
+        with:
+          releaseDirectory: android/app/build/outputs/bundle/release
+          signingKeyBase64: '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'
+          alias: "key0"
+          keyStorePassword: "12qwaszx"
+          keyPassword: "12qwaszx"
       
-      # - name: Distribute app via Firebase App Distribution
-      #   env:
-      #     firebaseToken: '1//0g-oiBWzTGzdfCgYIARAAGBASNwF-L9IrlueGioiTEs8v1p-rV_HxWPyt_j7cv5Lg7PyEldoPegZW_vw2aN5psNnn6rGfZu0gK18'
-      #     firebaseGroups: 'Testing'
-      #     firebaseAppId: ${{ secrets.FIREBASE_APP_ID }}
-      #     # notes: ${{ github.event.head_commit.message }}
-      #   run: |
-      #     yarn global add firebase-tools
-      #     export PATH="$(yarn global bin):$PATH"
-      #     firebase \
-      #       appdistribution:distribute android/app/build/outputs/apk/release/app-release.apk \
-      #       --app $firebaseAppId \
-      #       --release-notes "$notes" \
-      #       --groups "$firebaseGroups" \
-      #       --token "$firebaseToken"
+      - name: Distribute app via Firebase App Distribution
+        env:
+          firebaseToken: '1//0g-oiBWzTGzdfCgYIARAAGBASNwF-L9IrlueGioiTEs8v1p-rV_HxWPyt_j7cv5Lg7PyEldoPegZW_vw2aN5psNnn6rGfZu0gK18'
+          firebaseGroups: 'Testing'
+          firebaseAppId: ${{ secrets.FIREBASE_APP_ID }}
+          # notes: ${{ github.event.head_commit.message }}
+        run: |
+          yarn global add firebase-tools
+          export PATH="$(yarn global bin):$PATH"
+          firebase \
+            appdistribution:distribute android/app/build/outputs/apk/release/app-release.apk \
+            --app $firebaseAppId \
+            --release-notes "$notes" \
+            --groups "$firebaseGroups" \
+            --token "$firebaseToken"
