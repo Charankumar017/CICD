@@ -26,7 +26,7 @@ jobs:
           cache: 'gradle'
 
       - name: Setup Node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@master
         with:
           node-version: '22.12.0'
 
@@ -49,7 +49,7 @@ jobs:
 
       - name: Make Gradlew Executable
         run: cd android && chmod +x ./gradlew
-  
+
       - name: Build Android App Bundle
         run: |
           cd android && ./gradlew bundleRelease --no-daemon
