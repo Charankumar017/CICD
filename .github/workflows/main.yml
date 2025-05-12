@@ -34,7 +34,7 @@ jobs:
         run: |
           cd ./android
           ./gradlew assemble
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v3.1.3
         with:
           name: Build
           path: android/app/build/outputs/apk/debug/app-debug.apk
